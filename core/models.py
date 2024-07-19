@@ -10,7 +10,7 @@ class Profile(models.Model):
         max_length=128,
         unique=True,
         validators=[
-            UnicodeUsernameValidator(regex="^@",message="username must start with \'@\' symbol")
+            UnicodeUsernameValidator(regex="^@",message="Handle must start with \'@\' symbol")
         ]
     )
     bio = models.TextField(max_length=100)
@@ -19,6 +19,7 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     text = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"Post {self.id} by {self.user.username}"
