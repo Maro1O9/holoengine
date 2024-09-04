@@ -1,6 +1,6 @@
 ### Holoengine
 
-the backend of project Hologram
+Simple backend for a social meida platform
 
 # Hologram is a social media platform
 
